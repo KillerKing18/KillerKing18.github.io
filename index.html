@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3367D6"/>
+    <title>Práctica Tecnologías Web</title>
+    <link rel="stylesheet" href="mihoja.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/images/lista192.png">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(reg => {
+                    console.log('Todo bien:', reg)
+                }, function (err) {
+                    console.log('Fallo', err)
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="superior"><h1 id="tituloTemporal">Progressive Web App</h1></div>
+    <div id="inferior"></div>
+    
+    <script src="gui.js" type="module"></script>
+</body>
+</html>
